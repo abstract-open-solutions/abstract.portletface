@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+   i18n:domain="abstract.portletface">
+
+<object name="object" meta_type="CMF Action Category">
+    <object name="portlets" meta_type="CMF Action">
+      <property name="title" i18n:translate="">Portlets</property>
+      <property name="description" i18n:translate=""></property>
+      <property name="url_expr">string:${object_url}/@@portlets</property>
+      <property name="icon_expr"></property>
+      <property name="available_expr">object/portletface_enabled/is_enabled</property>
+      <property name="permissions">
+        <element value="Modify portal content"/>
+      </property>
+      <property name="visible">True</property>
+    </object>
+</object>
+
+<object name="object_buttons" meta_type="CMF Action Category">
+  <property name="title"></property>
+  <object name="enable_portletface" meta_type="CMF Action">
+   <property name="title"
+      i18n:translate="">Enable extra portlets</property>
+   <property name="description"
+      i18n:translate="">Enable portlets for this item</property>
+
+   <property
+       name="url_expr">string:$object_url/enable_portletface</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr">python: not (object.isPrincipiaFolderish or object.restrictedTraverse('portletface_enabled').is_enabled)</property>
+   <property name="permissions">
+    <element value="Modify portal content"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+
+  <object name="disable_portletface" meta_type="CMF Action">
+   <property name="title" i18n:translate="">Disable extra portlets</property>
+   <property name="description" i18n:translate="">Disable portlets for this item</property>
+
+   <property
+       name="url_expr">string:$object_url/disable_portletface</property>
+   <property name="icon_expr"></property>
+   <property name="available_expr">python: not object.isPrincipiaFolderish and object.restrictedTraverse('portletface_enabled').is_enabled</property>
+   <property name="permissions">
+    <element value="Modify portal content"/>
+   </property>
+   <property name="visible">True</property>
+  </object>
+
+ </object>
+</object>

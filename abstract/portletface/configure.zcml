@@ -1,0 +1,69 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="abstract.portletface">
+
+  <i18n:registerTranslations directory="locales" />
+  <includeDependencies package="." />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="abstract.portletface"
+      directory="profiles/default"
+      description="Installs the abstract.portletface package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <browser:page
+      for=".interfaces.IPortletFace"
+      layer=".interfaces.IPortletFaceBrowserLayer"
+      name="two-columns"
+      class="collective.portletpage.browser.portletpage.TwoColumns"
+      permission="zope2.View"
+      />
+
+  <browser:menuItem
+      for=".interfaces.IPortletFace"
+      menu="plone_displayviews"
+      title="Two columns"
+      action="@@two-columns"
+      description="A two-column view"
+      />
+
+  <browser:page
+      for=".interfaces.IPortletFace"
+      layer=".interfaces.IPortletFaceBrowserLayer"
+      name="portlets"
+      class="collective.portletpage.browser.column.ManagePortlets"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <browser:page
+      name="portletface_enabled"
+      layer=".interfaces.IPortletFaceBrowserLayer"
+      for = "*"
+      class=".browser.PortletFaceEnabled"
+      permission="zope2.View"
+      allowed_attributes="is_enabled"
+      />
+
+  <browser:page
+      name="disable_portletface"
+      layer=".interfaces.IPortletFaceBrowserLayer"
+      for = "*"
+      class=".browser.DisablePortletFace"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <browser:page
+      name="enable_portletface"
+      layer=".interfaces.IPortletFaceBrowserLayer"
+      for = "*"
+      class=".browser.EnablePortletFace"
+      permission="cmf.ModifyPortalContent"
+      />
+
+</configure>
