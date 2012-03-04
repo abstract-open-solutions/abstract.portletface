@@ -1,0 +1,45 @@
+# Giorgio Borelli <giorgio@abstract.it>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2012-03-04 18:41+0000\n"
+"PO-Revision-Date: 2012-03-04 18:39+0000\n"
+"Last-Translator: Giorgio Borelli <giorgio@abstract.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: abstract.portletface\n"
+
+#: ../profiles/default/actions.xml
+msgid "Disable extra portlets"
+msgstr "Disabilita le portlet extra"
+
+#: ../profiles/default/actions.xml
+msgid "Disable portlets for this item"
+msgstr "Questa azione disabilita le portlet extra per questo elemento"
+
+#: ../profiles/default/actions.xml
+msgid "Enable extra portlets"
+msgstr "Abilita le portlet extra"
+
+#: ../profiles/default/actions.xml
+msgid "Enable portlets for this item"
+msgstr "Questa azione abilita le portlet extra per questo elemento"
+
+#: ../browser.py:22
+msgid "Extra portlets have been disabled"
+msgstr "Le portlet extra sono state disabilitate"
+
+#: ../browser.py:14
+msgid "Extra portlets have been enabled"
+msgstr "Le portlet extra sono state abilitate"
+
+#: ../profiles/default/actions.xml
+msgid "Portlets"
+msgstr "Portlets"
+
